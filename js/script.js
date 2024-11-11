@@ -39,3 +39,40 @@ function hardWorkLesson(text) {
 }
 
 console.log(hardWorkLesson(12344565))
+
+
+
+function checkForNumber() {
+    const input = prompt("Только число плес");
+    return input === null ? null : +input.trim() || null;
+}
+
+let isNumber = checkForNumber();
+console.log(isNumber);
+
+
+let onlyFourAndTwo = ["23478", "45656", "72385", "23456", "84154", "45997", "34789"];
+
+onlyFourAndTwo.forEach(number => {
+    if (number.startsWith("2") || number.startsWith("4")) {
+        console.log(number);
+    }
+});
+
+function MultiDigitNumbers(n) {
+    if (n <= 1) {
+        return false;
+    }
+    for (let i = 2; i <= Math.sqrt(n); i++) {
+        if (n % i === 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+for (let num = 1; num <= 100; num++) {
+    if (MultiDigitNumbers(num)) {
+        console.log(`${num}: 1, ${num}`);
+    }
+}
